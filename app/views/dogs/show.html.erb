@@ -1,0 +1,16 @@
+<h1>Profile</h1>
+
+<p> <%= @dog.name %> </p>
+<p> <%= @dog.breed %> </p>
+<p> <%= @dog.age %> </p>
+
+
+<h3>Employs </h3>
+<ul>
+  <% @dog.employees.each do |employee| %>
+    <li> <%= link_to employee.first_name, employee_path(employee) %> </li>
+  <% end %>
+</ul>
+
+<%= button_to "Change", edit_dog_path(@dog), method: :get %>
+<%= button_to "Let Go", dog_path(@dog), method: :delete %>

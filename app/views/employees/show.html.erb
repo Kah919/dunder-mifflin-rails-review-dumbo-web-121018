@@ -1,0 +1,14 @@
+<h1>Profile</h1>
+
+<p> <%= @employee.first_name %> </p>
+<p> <%= @employee.last_name %> </p>
+<p> <%= @employee.alias %> </p>
+<p> <%= @employee.title %> </p>
+<p> <%= @employee.office %> </p>
+<img src="<%= @employee.img_url %>" >
+
+<h3>Belongs to</h3>
+<%= link_to @employee.dog.name, dog_path(@employee.dog) %> <!-- ask Jane --> <!-- AYYYYYY figured it out myself -->
+
+<%= button_to "Change", edit_employee_path(@employee), method: :get %>
+<%= button_to "Let Go", employee_path(@employee), method: :delete %>
